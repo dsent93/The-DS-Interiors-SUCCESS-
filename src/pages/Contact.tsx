@@ -86,7 +86,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <p className="text-sm text-gray-600">Email</p>
-                    <p className="text-secondary">contact@dsinteriors.com</p>
+                    <p className="text-secondary">dsenterprises24.in@gmail.com</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-4">
@@ -95,7 +95,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <p className="text-sm text-gray-600">Phone</p>
-                    <p className="text-secondary">+1 (555) 123-4567</p>
+                    <p className="text-secondary">+91 9372823338</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-4">
@@ -104,7 +104,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <p className="text-sm text-gray-600">Location</p>
-                    <p className="text-secondary">123 Design Street, Creative City, ST 12345</p>
+                    <p className="text-secondary">Shop No 3 Plot No 20-21, Sawan Heritage Sector 15 Kalamboli, Navi Mumbai-410218</p>
                   </div>
                 </div>
               </div>
@@ -114,7 +114,7 @@ const Contact = () => {
               <h3 className="text-2xl font-display text-secondary">Follow Us</h3>
               <div className="flex gap-4">
                 {[
-                  { icon: <Instagram size={24} />, label: "Instagram" },
+                  { icon: <Instagram size={24} />, label: "Instagram", url: "https://www.instagram.com/shri_nirmal_/?hl=fr" },
                   { icon: <Facebook size={24} />, label: "Facebook" },
                   { icon: <LinkedIn size={24} />, label: "LinkedIn" }
                 ].map((social, index) => (

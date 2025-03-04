@@ -115,9 +115,9 @@ const Contact = () => {
               <h3 className="text-2xl font-display text-secondary">Follow Us</h3>
               <div className="flex gap-4">
                 {[
-                  { icon: <Instagram size={24} />, label: "Instagram", url: "https://www.instagram.com/shri_nirmal_/?hl=fr" },
-                  { icon: <Facebook size={24} />, label: "Facebook" },
-                  { icon: <LinkedIn size={24} />, label: "LinkedIn" }
+                  { icon: <Instagram size={24} />, label: "Instagram", href: "https://www.instagram.com/thedsinteriors?igsh=NHNvdXE5OXMzMWZk"},
+                  { icon: <Facebook size={24} />, label: "Facebook", href: "https://www.instagram.com/thedsinteriors?igsh=NHNvdXE5OXMzMWZk" },
+                  { icon: <LinkedIn size={24} />, label: "LinkedIn", href: "https://www.instagram.com/thedsinteriors?igsh=NHNvdXE5OXMzMWZk" }
                 ].map((social, index) => (
                   <a
                     key={index}

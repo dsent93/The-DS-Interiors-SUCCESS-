@@ -22,7 +22,7 @@ const Navbar = () => {
             <Link to="/designs" className="nav-link">Designs</Link>
             <Link to="/contact" className="nav-link">Contact</Link>
             <Link 
-              to="/consultation" 
+              to="https://calendly.com/dsenterprises24-in/30min" 
               className="px-6 py-2 bg-primary/90 text-white rounded-full hover:bg-primary transition-colors"
             >
               Book Consultation

@@ -48,9 +48,9 @@ const Footer = () => {
           <div>
             <h3 className="font-semibold text-secondary mb-4">Contact</h3>
             <ul className="space-y-2">
-              <li className="text-gray-600">123 Design Street</li>
-              <li className="text-gray-600">Creative City, ST 12345</li>
-              <li className="text-gray-600">+1 (555) 123-4567</li>
+              <li className="text-gray-600">ShopNo 3 PlotNo 20-21 Sawan Heritage</li>
+              <li className="text-gray-600">Sector-15 Kalamboli, Navi Mumbai-410218</li>
+              <li className="text-gray-600">+91 9372823338</li>
               <li>
                 <a 
                   href="mailto:dsenterprises24.in@gmail.com" 
@@ -68,9 +68,9 @@ c
             <h3 className="font-semibold text-secondary mb-4">Follow Us</h3>
             <div className="flex gap-4">
               {[
-                { icon: <Instagram size={20} />, label: "Instagram", href: "#" },
-                { icon: <Facebook size={20} />, label: "Facebook", href: "#" },
-                { icon: <Linkedin size={20} />, label: "LinkedIn", href: "#" }
+                { icon: <Instagram size={20} />, label: "Instagram", href: "https://www.instagram.com/thedsinteriors?igsh=NHNvdXE5OXMzMWZk" },
+                { icon: <Facebook size={20} />, label: "Facebook", href: "https://www.instagram.com/thedsinteriors?igsh=NHNvdXE5OXMzMWZk" },
+                { icon: <Linkedin size={20} />, label: "LinkedIn", href: "https://www.instagram.com/thedsinteriors?igsh=NHNvdXE5OXMzMWZk" }
               ].map((social, index) => (
                 <a
                   key={index}

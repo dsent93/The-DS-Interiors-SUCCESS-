@@ -32,7 +32,7 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <Link to="/consultation" className="text-gray-600 hover:text-primary transition-colors">
+                <Link to="https://calendly.com/dsenterprises24-in/30min" className="text-gray-600 hover:text-primary transition-colors">
                   Book Consultation
                 </Link>
               </li>
@@ -62,7 +62,7 @@ const Footer = () => {
               </li>
             </ul>
           </div>
-
+c
           {/* Social Links */}
           <div>
             <h3 className="font-semibold text-secondary mb-4">Follow Us</h3>

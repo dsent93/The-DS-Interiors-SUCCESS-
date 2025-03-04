@@ -23,7 +23,7 @@ const Home = () => {
               </p>
               <div className="flex gap-4">
                 <a 
-                  href="/consultation" 
+                  href="https://calendly.com/dsenterprises24-in/30min" 
                   className="px-8 py-3 bg-primary/90 text-white rounded-full hover:bg-primary transition-colors inline-flex items-center gap-2"
                 >
                   Book Consultation <ArrowRight size={20} />

@@ -27,7 +27,7 @@ const Designs = () => {
       title: "Coward Replish Style",
       description: "Authorized Camen",
       image: "https://plus.unsplash.com/premium_photo-1683134520102-a7b65579c4bf?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
-    }
+    },
     {
       id: 5,
       title: "Sanco Denish Puster",

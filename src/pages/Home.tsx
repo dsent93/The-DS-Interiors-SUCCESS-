@@ -50,9 +50,9 @@ const Home = () => {
               <div className="absolute -bottom-6 -left-6 bg-white p-4 rounded-lg shadow-lg">
                 <div className="flex items-center gap-2 mb-2">
                   <Star className="text-yellow-400" size={20} />
-                  <span className="font-semibold">4.9/5 Rating</span>
+                  <span className="font-semibold">4.5/5 Rating</span>
                 </div>
-                <p className="text-sm text-gray-600">From 200+ Happy Clients</p>
+                <p className="text-sm text-gray-600">From 150+ Happy Clients</p>
               </div>
             </motion.div>
           </div>

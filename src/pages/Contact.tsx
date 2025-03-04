@@ -104,7 +104,8 @@ const Contact = () => {
                   </div>
                   <div>
                     <p className="text-sm text-gray-600">Location</p>
-                    <p className="text-secondary">Shop No 3 Plot No 20-21, Sawan Heritage Sector 15 Kalamboli, Navi Mumbai-410218</p>
+                    <p className="text-secondary">Shop No 3 Plot No 20-21
+                       Sawan Heritage Sector 15 Kalamboli, Navi Mumbai-410218</p>
                   </div>
                 </div>
               </div>

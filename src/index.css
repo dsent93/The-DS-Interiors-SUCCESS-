@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-primary: 200 170 140;
+    --color-secondary: 40 40 40;
+  }
+}
+
+body {
+  @apply bg-gray-50 text-gray-900;
+}
+
+.curved-border {
+  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+}
+
+.nav-link {
+  @apply relative px-4 py-2 text-gray-700 hover:text-gray-900 transition-colors;
+}
+
+.nav-link::after {
+  content: '';
+  @apply absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300;
+}
+
+.nav-link:hover::after {
+  @apply w-full;
+}
+
+.hero-gradient {
+  background: linear-gradient(135deg, rgb(var(--color-primary) / 0.1), transparent);
+}
+
+.section-padding {
+  @apply py-16 md:py-24;
+}
+
+.container-padding {
+  @apply px-4 md:px-6 lg:px-8;
+}

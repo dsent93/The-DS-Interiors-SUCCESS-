@@ -21,6 +21,12 @@ const Designs = () => {
       title: "Industrial Chic",
       description: "Raw materials meet refined design for an urban aesthetic",
       image: "https://images.unsplash.com/photo-1600607687644-c7171b42498f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
+    },
+    {
+      id: 4,
+      title: "Coward Replish Style",
+      description: "Authorized Camen",
+      image: "https://drive.google.com/uc?export=view&id=1QhDKiLgJ7SuE4C_2lET-r8xyexZD7-vZ"
     }
   ];
 

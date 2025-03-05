@@ -123,7 +123,64 @@ const Contact = () => {
           </motion.div>
 
           {/* Contact Information */}
-          {/* ... (Your other contact information code goes here) */}
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5 }}
+            className="space-y-8"
+          >
+            <div className="space-y-4">
+              <h3 className="text-2xl font-display text-secondary">Contact Information</h3>
+              <div className="space-y-4">
+                <div className="flex items-center gap-4">
+                  <div className="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center text-primary">
+                    <Mail size={20} />
+                  </div>
+                  <div>
+                    <p className="text-sm text-gray-600">Email</p>
+                    <p className="text-secondary">dsenterprises24.in@gmail.com</p>
+                  </div>
+                </div>
+                <div className="flex items-center gap-4">
+                  <div className="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center text-primary">
+                    <Phone size={20} />
+                  </div>
+                  <div>
+                    <p className="text-sm text-gray-600">Phone</p>
+                    <p className="text-secondary">+91 9372823338</p>
+                  </div>
+                </div>
+                <div className="flex items-center gap-4">
+                  <div className="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center text-primary">
+                    <MapPin size={20} />
+                  </div>
+                  <div>
+                    <p className="text-sm text-gray-600">Location</p>
+                    <p className="text-secondary">Shop No 3 Plot No 20-21 Sawan Heritage Sector 15 Kalamboli, Navi Mumbai-410218</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="space-y-4">
+              <h3 className="text-2xl font-display text-secondary">Follow Us</h3>
+              <div className="flex gap-4">
+                {[{ icon: <Instagram size={24} />, label: "Instagram", href: "https://www.instagram.com/thedsinteriors?igsh=NHNvdXE5OXMzMWZk" },
+                  { icon: <Facebook size={24} />, label: "Facebook", href: "https://www.instagram.com/thedsinteriors?igsh=NHNvdXE5OXMzMWZk" },
+                  { icon: <LinkedIn size={24} />, label: "LinkedIn", href: "https://www.instagram.com/thedsinteriors?igsh=NHNvdXE5OXMzMWZk" }]
+                  .map((social, index) => (
+                    <a
+                      key={index}
+                      href={social.href}
+                      className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-colors"
+                      aria-label={social.label}
+                    >
+                      {social.icon}
+                    </a>
+                  ))}
+              </div>
+            </div>
+          </motion.div>
         </div>
       </div>
     </div>

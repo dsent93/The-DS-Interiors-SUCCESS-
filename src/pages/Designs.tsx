@@ -6,33 +6,57 @@ const Designs = () => {
   const designStyles = [
     {
       id: 1,
-      title: "Modern Minimalist",
-      description: "Clean lines and uncluttered spaces define this contemporary style",
-      image: "https://imgur.com/a/1vVi87T"
+      title: "Opal Glow Canvas",
+      description: "Elegance and Warmth to Every Space",
+      image: "https://i.ibb.co/8vLcr1H/LIGHT-GOLDEN-CANVAS.jpg"
     },
     {
       id: 2,
-      title: "Scandinavian",
-      description: "Light, airy spaces with natural elements and functional design",
-      image: "https://ibb.co/FS4QXt5?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
+      title: "Blue Malachite",
+      description: "Beauty in Every Shade",
+      image: "https://i.ibb.co/ywFzpJ6/BLUE-MALACHITE.jpg"
     },
     {
       id: 3,
-      title: "Industrial Chic",
-      description: "Raw materials meet refined design for an urban aesthetic",
-      image: "https://images.unsplash.com/photo-1600607687644-c7171b42498f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
+      title: "Blue Tree Canvas",
+      description: "Where imagination grows, and creativity takes its roots",
+      image: "https://i.ibb.co/Kzh1936q/BLUE-TREE-CANVAS.jpg"
     },
     {
       id: 4,
-      title: "Coward Replish Style",
-      description: "Authorized Camen",
-      image: "https://plus.unsplash.com/premium_photo-1683134520102-a7b65579c4bf?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
+      title: "Fantasy Cloudscape",
+      description: " Custom Cloud-inspired designs that elevate your environment",
+      image: "https://i.ibb.co/Tq7zKHJV/Fantasy-Cloud-Scape.jpg"
     },
     {
       id: 5,
-      title: "Sanco Denish Puster",
-      description: "Usaine",
-      image: "https://images.pexels.com/photos/227396/pexels-photo-227396.jpeg?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
+      title: "Elysian Luxe",
+      description: "Exude Sophistication and Opulence",
+      image: "https://i.ibb.co/wrxWY7tg/CANTRAVAL-TEXTURE.jpg"
+    },
+    {
+      id: 6,
+      title: "Stencil Wall",
+      description: "Bold, Delicate motif and Intricate Design",
+      image: "https://i.ibb.co/cK1NzMRm/STENCIL-WALL.jpg"
+    },
+    {
+      id: 7,
+      title: "Alabaster Stripes",
+      description: "Elegant Simplicity in Every Line",
+      image: "https://i.ibb.co/XrMvB64T/TEXTURAL-WHITE-CANVAS.jpg"
+    },
+    {
+      id: 8,
+      title: "Orange Pastel",
+      description: "Soothing Blend of Warmth and Calm to any Space",
+      image: "https://i.ibb.co/XrwtqzjW/ORANGE-PASTEL.jpg"
+    },
+    {
+      id: 9,
+      title: "Damara Motif",
+      description: " A Fusion of Tradition and Elegance",
+      image: "https://i.ibb.co/3yg76jdN/Damasak-Pattern.jpg"
     }
   ];
 

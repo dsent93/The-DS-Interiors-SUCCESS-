@@ -8,7 +8,7 @@ const Designs = () => {
       id: 1,
       title: "Modern Minimalist",
       description: "Clean lines and uncluttered spaces define this contemporary style",
-      image: "https://drive.google.com/uc?export=view&id=1VvDPqeZOHFiF6KLPRVphWgtky6wp6WD6"
+      image: "https://imgur.com/a/1vVi87T"
     },
     {
       id: 2,

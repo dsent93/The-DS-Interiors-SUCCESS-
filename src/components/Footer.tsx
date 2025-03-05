@@ -62,7 +62,7 @@ const Footer = () => {
               </li>
             </ul>
           </div>
-c
+
           {/* Social Links */}
           <div>
             <h3 className="font-semibold text-secondary mb-4">Follow Us</h3>

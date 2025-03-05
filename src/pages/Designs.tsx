@@ -14,7 +14,7 @@ const Designs = () => {
       id: 2,
       title: "Scandinavian",
       description: "Light, airy spaces with natural elements and functional design",
-      image: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
+      image: "https://ibb.co/FS4QXt5?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
     },
     {
       id: 3,

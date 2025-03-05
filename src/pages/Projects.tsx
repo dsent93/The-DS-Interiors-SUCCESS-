@@ -11,9 +11,9 @@ const Projects = () => {
       id: 1,
       title: "Luxury Villa Renovation",
       category: "Residential",
-      location: "Beverly Hills",
+      location: "Kalamboli",
       image: "https://images.unsplash.com/photo-1600210492493-0946911123ea?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
-      description: "Complete renovation of a 6,000 sq ft Mediterranean villa"
+      description: "Complete renovation of a 6,000 sq ft of Kelerian House"
     },
     {
       id: 2,

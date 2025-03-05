@@ -86,7 +86,7 @@ const Footer = () => {
         </div>
 
         <div className="mt-12 pt-8 border-t text-center text-gray-600">
-          <p>&copy; {new Date().getFullYear()} The Ds Interiors. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} The DS Interiors. All rights reserved.</p>
         </div>
       </div>
     </footer>

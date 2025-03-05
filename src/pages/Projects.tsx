@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Filter, Search } from 'lucide-react';
 
 const Projects = () => {
+  const [searchQuery, setSearchQuery] = useState('');
+  const [selectedCategory, setSelectedCategory] = useState('All');
+
   const projects = [
     {
       id: 1,
@@ -38,6 +41,13 @@ const Projects = () => {
     }
   ];
 
+  // Filter projects based on category and search query
+  const filteredProjects = projects.filter((project) => {
+    const matchesCategory = selectedCategory === 'All' || project.category === selectedCategory;
+    const matchesSearch = project.title.toLowerCase().includes(searchQuery.toLowerCase());
+    return matchesCategory && matchesSearch;
+  });
+
   return (
     <div className="pt-24 pb-16">
       <div className="container mx-auto px-4">
@@ -62,10 +72,30 @@ const Projects = () => {
               <span>Filter</span>
             </button>
             <div className="flex gap-2">
-              <button className="px-4 py-2 rounded-full bg-primary/90 text-white">All</button>
-              <button className="px-4 py-2 rounded-full hover:bg-primary/5">Residential</button>
-              <button className="px-4 py-2 rounded-full hover:bg-primary/5">Commercial</button>
-              <button className="px-4 py-2 rounded-full hover:bg-primary/5">Hospitality</button>
+              <button 
+                onClick={() => setSelectedCategory('All')} 
+                className={`px-4 py-2 rounded-full ${selectedCategory === 'All' ? 'bg-primary/90 text-white' : 'hover:bg-primary/5'}`}
+              >
+                All
+              </button>
+              <button 
+                onClick={() => setSelectedCategory('Residential')} 
+                className={`px-4 py-2 rounded-full ${selectedCategory === 'Residential' ? 'bg-primary/90 text-white' : 'hover:bg-primary/5'}`}
+              >
+                Residential
+              </button>
+              <button 
+                onClick={() => setSelectedCategory('Commercial')} 
+                className={`px-4 py-2 rounded-full ${selectedCategory === 'Commercial' ? 'bg-primary/90 text-white' : 'hover:bg-primary/5'}`}
+              >
+                Commercial
+              </button>
+              <button 
+                onClick={() => setSelectedCategory('Hospitality')} 
+                className={`px-4 py-2 rounded-full ${selectedCategory === 'Hospitality' ? 'bg-primary/90 text-white' : 'hover:bg-primary/5'}`}
+              >
+                Hospitality
+              </button>
             </div>
           </div>
           <div className="relative">
@@ -73,6 +103,8 @@ const Projects = () => {
             <input
               type="text"
               placeholder="Search projects..."
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
               className="pl-10 pr-4 py-2 border border-gray-200 rounded-full focus:outline-none focus:border-primary/20"
             />
           </div>
@@ -80,7 +112,7 @@ const Projects = () => {
 
         {/* Projects Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.map((project, index) => (
+          {filteredProjects.map((project, index) => (
             <motion.div
               key={project.id}
               initial={{ opacity: 0, y: 20 }}

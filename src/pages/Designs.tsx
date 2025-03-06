@@ -58,6 +58,20 @@ const Designs = () => {
   return (
     <div className="pt-24 pb-16">
       <div className="container mx-auto px-4">
+        {/* Design Styles */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="text-center mb-12"
+        >
+          <h1 className="font-display text-4xl md:text-5xl text-secondary mb-4">
+            Design Styles
+          </h1>
+          <p className="text-gray-600 max-w-2xl mx-auto">
+            Explore our curated collection of design styles and find the perfect inspiration for your space.
+          </p>
+        </motion.div>
+
         {/* 3 Options (Upload, Explore Materials, 3D Visualization) */}
         <div className="grid md:grid-cols-3 gap-6 mb-8">
           {[{
@@ -91,20 +105,7 @@ const Designs = () => {
           ))}
         </div>
 
-        {/* Design Styles */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="text-center mb-12"
-        >
-          <h1 className="font-display text-4xl md:text-5xl text-secondary mb-4">
-            Design Styles
-          </h1>
-          <p className="text-gray-600 max-w-2xl mx-auto">
-            Explore our curated collection of design styles and find the perfect inspiration for your space.
-          </p>
-        </motion.div>
-
+        {/* Design Styles Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {designStyles.map((style, index) => (
             <motion.div

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Upload, Palette, Layout } from 'lucide-react';
 
@@ -8,26 +8,35 @@ const Designs = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [newDesign, setNewDesign] = useState({ title: '', description: '', image: '' });
-  const [designStyles, setDesignStyles] = useState([
-    {
-      id: 1,
-      title: "Opal Glow Canvas",
-      description: "Elegance and Warmth to Every Space",
-      image: "https://i.ibb.co/8vLcr1H/LIGHT-GOLDEN-CANVAS.jpg"
-    },
-    {
-      id: 2,
-      title: "Blue Malachite",
-      description: "Beauty in Every Shade",
-      image: "https://i.ibb.co/ywFzpJ6/BLUE-MALACHITE.jpg"
-    },
-    {
-      id: 3,
-      title: "Blue Tree Canvas",
-      description: "Where imagination grows, and creativity takes its roots",
-      image: "https://i.ibb.co/Kzh1936q/BLUE-TREE-CANVAS.jpg"
-    }
-  ]);
+  const [designStyles, setDesignStyles] = useState(() => {
+    // Load designs from localStorage, if available
+    const savedDesigns = localStorage.getItem('designStyles');
+    return savedDesigns ? JSON.parse(savedDesigns) : [
+      {
+        id: 1,
+        title: "Opal Glow Canvas",
+        description: "Elegance and Warmth to Every Space",
+        image: "https://i.ibb.co/8vLcr1H/LIGHT-GOLDEN-CANVAS.jpg"
+      },
+      {
+        id: 2,
+        title: "Blue Malachite",
+        description: "Beauty in Every Shade",
+        image: "https://i.ibb.co/ywFzpJ6/BLUE-MALACHITE.jpg"
+      },
+      {
+        id: 3,
+        title: "Blue Tree Canvas",
+        description: "Where imagination grows, and creativity takes its roots",
+        image: "https://i.ibb.co/Kzh1936q/BLUE-TREE-CANVAS.jpg"
+      }
+    ];
+  });
+
+  useEffect(() => {
+    // Save design styles to localStorage whenever the designs change
+    localStorage.setItem('designStyles', JSON.stringify(designStyles));
+  }, [designStyles]);
 
   const handleLogin = (e) => {
     e.preventDefault();
@@ -53,6 +62,10 @@ const Designs = () => {
     }
     setDesignStyles([...designStyles, { id: designStyles.length + 1, ...newDesign }]);
     setNewDesign({ title: '', description: '', image: '' });
+  };
+
+  const closeLoginPopup = () => {
+    setShowLogin(false);
   };
 
   return (
@@ -135,7 +148,13 @@ const Designs = () => {
         {/* Upload New Design Modal (Pop-up) */}
         {showLogin && (
           <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
-            <div className="bg-white p-6 rounded-lg shadow-lg">
+            <div className="bg-white p-6 rounded-lg shadow-lg relative">
+              <button
+                className="absolute top-2 right-2 text-xl text-gray-600"
+                onClick={closeLoginPopup}
+              >
+                &times;
+              </button>
               <h2 className="text-2xl mb-4">Login</h2>
               <form onSubmit={handleLogin}>
                 <input

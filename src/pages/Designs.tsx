@@ -58,48 +58,8 @@ const Designs = () => {
   return (
     <div className="pt-24 pb-16">
       <div className="container mx-auto px-4">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="text-center mb-12"
-        >
-          <h1 className="font-display text-4xl md:text-5xl text-secondary mb-4">
-            Design Styles
-          </h1>
-          <p className="text-gray-600 max-w-2xl mx-auto">
-            Explore our curated collection of design styles and find the perfect inspiration for your space.
-          </p>
-        </motion.div>
-
-        {/* Design Styles */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {designStyles.map((style, index) => (
-            <motion.div
-              key={style.id}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="group cursor-pointer"
-            >
-              <div className="relative overflow-hidden rounded-lg">
-                <img 
-                  src={style.image} 
-                  alt={style.title}
-                  className="w-full h-80 object-cover transition-transform duration-500 group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <div className="absolute bottom-0 p-6">
-                    <h3 className="text-white text-xl font-semibold mb-2">{style.title}</h3>
-                    <p className="text-white/90">{style.description}</p>
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-          ))}
-        </div>
-
-        {/* Design Tools */}
-        <div className="grid md:grid-cols-3 gap-6 mb-16">
+        {/* 3 Options (Upload, Explore Materials, 3D Visualization) */}
+        <div className="grid md:grid-cols-3 gap-6 mb-8">
           {[{
             icon: <Upload size={24} />,
             title: "Upload Your Space",
@@ -131,48 +91,22 @@ const Designs = () => {
           ))}
         </div>
 
-        {showLogin && (
-          <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
-            <div className="bg-white p-6 rounded-lg shadow-lg">
-              <h2 className="text-2xl mb-4">Login</h2>
-              <form onSubmit={handleLogin}>
-                <input type="email" placeholder="Email" className="border p-2 w-full mb-2" value={email} onChange={(e) => setEmail(e.target.value)} required />
-                <input type="password" placeholder="Password" className="border p-2 w-full mb-4" value={password} onChange={(e) => setPassword(e.target.value)} required />
-                <button type="submit" className="bg-primary text-white px-4 py-2 rounded">Login</button>
-              </form>
-            </div>
-          </div>
-        )}
-
-        {isAuthenticated && (
-          <div className="mb-16">
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              className="text-2xl mb-4"
-            >
-              Upload New Design
-            </motion.h2>
-            <form onSubmit={handleSubmit} className="grid gap-4">
-              <input type="text" placeholder="Title" className="border p-2 w-full" value={newDesign.title} onChange={(e) => setNewDesign({ ...newDesign, title: e.target.value })} required />
-              <input type="text" placeholder="Description" className="border p-2 w-full" value={newDesign.description} onChange={(e) => setNewDesign({ ...newDesign, description: e.target.value })} required />
-              <input type="text" placeholder="Image URL" className="border p-2 w-full" value={newDesign.image} onChange={(e) => setNewDesign({ ...newDesign, image: e.target.value })} required />
-              <button type="submit" className="bg-primary text-white px-4 py-2 rounded">Upload</button>
-            </form>
-          </div>
-        )}
-      </div>
-
-      {/* New Designs Display */}
-      {designStyles.length > 3 && (
+        {/* Design Styles */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="mt-12 grid md:grid-cols-2 lg:grid-cols-3 gap-8"
+          className="text-center mb-12"
         >
-          {designStyles.slice(3).map((style, index) => (
+          <h1 className="font-display text-4xl md:text-5xl text-secondary mb-4">
+            Design Styles
+          </h1>
+          <p className="text-gray-600 max-w-2xl mx-auto">
+            Explore our curated collection of design styles and find the perfect inspiration for your space.
+          </p>
+        </motion.div>
+
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {designStyles.map((style, index) => (
             <motion.div
               key={style.id}
               initial={{ opacity: 0, y: 20 }}
@@ -181,8 +115,8 @@ const Designs = () => {
               className="group cursor-pointer"
             >
               <div className="relative overflow-hidden rounded-lg">
-                <img 
-                  src={style.image} 
+                <img
+                  src={style.image}
                   alt={style.title}
                   className="w-full h-80 object-cover transition-transform duration-500 group-hover:scale-110"
                 />
@@ -195,8 +129,75 @@ const Designs = () => {
               </div>
             </motion.div>
           ))}
-        </motion.div>
-      )}
+        </div>
+
+        {/* Upload New Design Modal (Pop-up) */}
+        {showLogin && (
+          <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
+            <div className="bg-white p-6 rounded-lg shadow-lg">
+              <h2 className="text-2xl mb-4">Login</h2>
+              <form onSubmit={handleLogin}>
+                <input
+                  type="email"
+                  placeholder="Email"
+                  className="border p-2 w-full mb-2"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  required
+                />
+                <input
+                  type="password"
+                  placeholder="Password"
+                  className="border p-2 w-full mb-4"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  required
+                />
+                <button type="submit" className="bg-primary text-white px-4 py-2 rounded">Login</button>
+              </form>
+            </div>
+          </div>
+        )}
+
+        {/* Upload New Design Form */}
+        {isAuthenticated && (
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="bg-white p-6 rounded-lg shadow-lg mb-16"
+          >
+            <h2 className="text-2xl mb-4">Upload New Design</h2>
+            <form onSubmit={handleSubmit} className="grid gap-4">
+              <input
+                type="text"
+                placeholder="Title"
+                className="border p-2 w-full"
+                value={newDesign.title}
+                onChange={(e) => setNewDesign({ ...newDesign, title: e.target.value })}
+                required
+              />
+              <input
+                type="text"
+                placeholder="Description"
+                className="border p-2 w-full"
+                value={newDesign.description}
+                onChange={(e) => setNewDesign({ ...newDesign, description: e.target.value })}
+                required
+              />
+              <input
+                type="text"
+                placeholder="Image URL"
+                className="border p-2 w-full"
+                value={newDesign.image}
+                onChange={(e) => setNewDesign({ ...newDesign, image: e.target.value })}
+                required
+              />
+              <button type="submit" className="bg-primary text-white px-4 py-2 rounded">Upload</button>
+            </form>
+          </motion.div>
+        )}
+      </div>
     </div>
   );
 };

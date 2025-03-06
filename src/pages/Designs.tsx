@@ -58,31 +58,73 @@ const Designs = () => {
   return (
     <div className="pt-24 pb-16">
       <div className="container mx-auto px-4">
-        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="text-center mb-12">
-          <h1 className="font-display text-4xl md:text-5xl text-secondary mb-4">Design Styles</h1>
-          <p className="text-gray-600 max-w-2xl mx-auto">Explore our curated collection of design styles and find the perfect inspiration for your space.</p>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="text-center mb-12"
+        >
+          <h1 className="font-display text-4xl md:text-5xl text-secondary mb-4">
+            Design Styles
+          </h1>
+          <p className="text-gray-600 max-w-2xl mx-auto">
+            Explore our curated collection of design styles and find the perfect inspiration for your space.
+          </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-6 mb-16">
-          {designStyles.map((design) => (
-            <div key={design.id} className="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
-              <img src={design.image} alt={design.title} className="w-full h-48 object-cover rounded-md mb-4" onError={(e) => e.target.src = "https://via.placeholder.com/150"} />
-              <h3 className="text-xl font-semibold mb-2">{design.title}</h3>
-              <p className="text-gray-600">{design.description}</p>
-            </div>
+        {/* Design Styles */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {designStyles.map((style, index) => (
+            <motion.div
+              key={style.id}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              className="group cursor-pointer"
+            >
+              <div className="relative overflow-hidden rounded-lg">
+                <img 
+                  src={style.image} 
+                  alt={style.title}
+                  className="w-full h-80 object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="absolute bottom-0 p-6">
+                    <h3 className="text-white text-xl font-semibold mb-2">{style.title}</h3>
+                    <p className="text-white/90">{style.description}</p>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
           ))}
         </div>
 
+        {/* Design Tools */}
         <div className="grid md:grid-cols-3 gap-6 mb-16">
           {[{
-            icon: <Upload size={24} />, title: "Upload Your Space", description: "Share photos of your space for personalized design recommendations", onClick: handleUpload
+            icon: <Upload size={24} />,
+            title: "Upload Your Space",
+            description: "Share photos of your space for personalized design recommendations",
+            onClick: handleUpload
           }, {
-            icon: <Palette size={24} />, title: "Explore Materials", description: "Browse our selection of premium materials and finishes"
+            icon: <Palette size={24} />,
+            title: "Explore Materials",
+            description: "Browse our selection of premium materials and finishes"
           }, {
-            icon: <Layout size={24} />, title: "3D Visualization", description: "See your design come to life with our 3D rendering service"
+            icon: <Layout size={24} />,
+            title: "3D Visualization",
+            description: "See your design come to life with our 3D rendering service"
           }].map((tool, index) => (
-            <motion.div key={index} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: index * 0.1 }} className="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow cursor-pointer" onClick={tool.onClick}>
-              <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center text-primary mb-4">{tool.icon}</div>
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              className="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow cursor-pointer"
+              onClick={tool.onClick}
+            >
+              <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center text-primary mb-4">
+                {tool.icon}
+              </div>
               <h3 className="text-xl font-semibold mb-2">{tool.title}</h3>
               <p className="text-gray-600">{tool.description}</p>
             </motion.div>
@@ -104,7 +146,14 @@ const Designs = () => {
 
         {isAuthenticated && (
           <div className="mb-16">
-            <h2 className="text-2xl mb-4">Upload New Design</h2>
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              className="text-2xl mb-4"
+            >
+              Upload New Design
+            </motion.h2>
             <form onSubmit={handleSubmit} className="grid gap-4">
               <input type="text" placeholder="Title" className="border p-2 w-full" value={newDesign.title} onChange={(e) => setNewDesign({ ...newDesign, title: e.target.value })} required />
               <input type="text" placeholder="Description" className="border p-2 w-full" value={newDesign.description} onChange={(e) => setNewDesign({ ...newDesign, description: e.target.value })} required />
@@ -114,6 +163,40 @@ const Designs = () => {
           </div>
         )}
       </div>
+
+      {/* New Designs Display */}
+      {designStyles.length > 3 && (
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="mt-12 grid md:grid-cols-2 lg:grid-cols-3 gap-8"
+        >
+          {designStyles.slice(3).map((style, index) => (
+            <motion.div
+              key={style.id}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              className="group cursor-pointer"
+            >
+              <div className="relative overflow-hidden rounded-lg">
+                <img 
+                  src={style.image} 
+                  alt={style.title}
+                  className="w-full h-80 object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="absolute bottom-0 p-6">
+                    <h3 className="text-white text-xl font-semibold mb-2">{style.title}</h3>
+                    <p className="text-white/90">{style.description}</p>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          ))}
+        </motion.div>
+      )}
     </div>
   );
 };

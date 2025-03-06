@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Upload, Palette, Layout } from 'lucide-react';
 
 const Designs = () => {
-  const designStyles = [
+  const [designStyles, setDesignStyles] = useState([
     {
       id: 1,
       title: "Opal Glow Canvas",
@@ -58,75 +58,63 @@ const Designs = () => {
       description: " A Fusion of Tradition and Elegance",
       image: "https://i.ibb.co/3yg76jdN/Damasak-Pattern.jpg"
     }
-  ];
+  ]);
+  
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [showUploadForm, setShowUploadForm] = useState(false);
+  const [credentials, setCredentials] = useState({ email: '', password: '' });
+  const [newDesign, setNewDesign] = useState({ title: '', description: '', image: '' });
+  
+  const handleLogin = () => {
+    if (credentials.email === "dhajare94@gmail.com" && credentials.password === "Sbr00216@") {
+      setIsLoggedIn(true);
+      setShowUploadForm(true);
+    } else {
+      alert("Invalid credentials");
+    }
+  };
+  
+  const handleUpload = () => {
+    if (newDesign.title && newDesign.description && newDesign.image) {
+      setDesignStyles([...designStyles, { ...newDesign, id: designStyles.length + 1 }]);
+      setNewDesign({ title: '', description: '', image: '' });
+      setShowUploadForm(false);
+    }
+  };
 
   return (
     <div className="pt-24 pb-16">
       <div className="container mx-auto px-4">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="text-center mb-12"
-        >
-          <h1 className="font-display text-4xl md:text-5xl text-secondary mb-4">
-            Design Styles
-          </h1>
-          <p className="text-gray-600 max-w-2xl mx-auto">
-            Explore our curated collection of design styles and find the perfect inspiration for your space.
-          </p>
-        </motion.div>
-
-        {/* Design Tools */}
-        <div className="grid md:grid-cols-3 gap-6 mb-16">
-          {[
-            {
-              icon: <Upload size={24} />,
-              title: "Upload Your Space",
-              description: "Share photos of your space for personalized design recommendations"
-            },
-            {
-              icon: <Palette size={24} />,
-              title: "Explore Materials",
-              description: "Browse our selection of premium materials and finishes"
-            },
-            {
-              icon: <Layout size={24} />,
-              title: "3D Visualization",
-              description: "See your design come to life with our 3D rendering service"
-            }
-          ].map((tool, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow"
-            >
-              <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center text-primary mb-4">
-                {tool.icon}
-              </div>
-              <h3 className="text-xl font-semibold mb-2">{tool.title}</h3>
-              <p className="text-gray-600">{tool.description}</p>
-            </motion.div>
-          ))}
+        <h1 className="text-4xl text-center mb-6">Design Styles</h1>
+        
+        {/* Upload Section */}
+        <div className="mb-6">
+          {!isLoggedIn ? (
+            <div className="p-6 bg-white rounded shadow-md w-96 mx-auto">
+              <h2 className="text-xl mb-4">Login</h2>
+              <input type="email" placeholder="Email" className="border p-2 w-full mb-2" onChange={e => setCredentials({ ...credentials, email: e.target.value })} />
+              <input type="password" placeholder="Password" className="border p-2 w-full mb-4" onChange={e => setCredentials({ ...credentials, password: e.target.value })} />
+              <button className="bg-primary text-white p-2 w-full" onClick={handleLogin}>Login</button>
+            </div>
+          ) : showUploadForm ? (
+            <div className="p-6 bg-white rounded shadow-md w-96 mx-auto">
+              <h2 className="text-xl mb-4">Upload Design</h2>
+              <input type="text" placeholder="Title" className="border p-2 w-full mb-2" value={newDesign.title} onChange={e => setNewDesign({ ...newDesign, title: e.target.value })} />
+              <input type="text" placeholder="Description" className="border p-2 w-full mb-2" value={newDesign.description} onChange={e => setNewDesign({ ...newDesign, description: e.target.value })} />
+              <input type="text" placeholder="Image URL" className="border p-2 w-full mb-4" value={newDesign.image} onChange={e => setNewDesign({ ...newDesign, image: e.target.value })} />
+              <button className="bg-primary text-white p-2 w-full" onClick={handleUpload}>Upload</button>
+            </div>
+          ) : (
+            <button className="bg-primary text-white p-2" onClick={() => setShowUploadForm(true)}>Upload Your Space</button>
+          )}
         </div>
-
-        {/* Design Styles */}
+        
+        {/* Design Gallery */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {designStyles.map((style, index) => (
-            <motion.div
-              key={style.id}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="group cursor-pointer"
-            >
+          {designStyles.map((style) => (
+            <motion.div key={style.id} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} className="group cursor-pointer">
               <div className="relative overflow-hidden rounded-lg">
-                <img 
-                  src={style.image} 
-                  alt={style.title}
-                  className="w-full h-80 object-cover transition-transform duration-500 group-hover:scale-110"
-                />
+                <img src={style.image} alt={style.title} className="w-full h-80 object-cover" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <div className="absolute bottom-0 p-6">
                     <h3 className="text-white text-xl font-semibold mb-2">{style.title}</h3>

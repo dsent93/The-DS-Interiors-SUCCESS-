@@ -9,34 +9,34 @@ const Projects = () => {
   const projects = [
     {
       id: 1,
-      title: "Luxury Villa Renovation",
+      title: "Home Renovation",
       category: "Residential",
       location: "Kalamboli",
-      image: "https://images.unsplash.com/photo-1600210492493-0946911123ea?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
-      description: "Complete renovation of a 6,000 sq ft of Kelerian House"
+      image: "https://i.ibb.co/zVmMXrL2/1.jpg",
+      description: "Complete renovation of a 2BHK House"
     },
     {
       id: 2,
-      title: "Modern Office Complex",
-      category: "Commercial",
-      location: "Downtown",
-      image: "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
-      description: "Contemporary workspace design for a tech company"
+      title: "Renovation of a 3BHK",
+      category: "Residential",
+      location: "Platinum Experia Kalamboli",
+      image: "https://i.ibb.co/9mMmcGvp/2.jpg",
+      description: "Luxurious Transformation of a 3BHK Residence"
     },
     {
       id: 3,
-      title: "Boutique Hotel Suite",
-      category: "Hospitality",
-      location: "Coastal Area",
-      image: "https://images.unsplash.com/photo-1600607687644-c7171b42498f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
-      description: "Luxury suite design featuring local artistry"
+      title: "2BHK INTERIOR DESIGN",
+      category: "Commercial",
+      location: "Krishna Apt Kamothe",
+      image: "https://media.designcafe.com/wp-content/uploads/2020/09/25151904/2bhk-apartment-living-room-interior-design.jpg",
+      description: "Exquisite 2BHK Luxury Suite Design Showcasing Local Artistry"
     },
     {
       id: 4,
-      title: "Urban Loft Conversion",
+      title: "2BHK INTERIOR RENOVATE",
       category: "Residential",
-      location: "City Center",
-      image: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+      location: "Kharghar",
+      image: "https://media.designcafe.com/wp-content/uploads/2021/06/30163556/modern-2bhk-kitchen-design-with-breakfast-countertop-with-two-tall-chairs.jpg",
       description: "Industrial loft transformed into modern living space"
     }
   ];

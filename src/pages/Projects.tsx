@@ -11,7 +11,7 @@ const Projects = () => {
       id: 1,
       title: "Home Renovation",
       category: "Residential",
-      location: "Kalamboli",
+      location: "Platinum Experia Kalamboli",
       image: "https://i.ibb.co/zVmMXrL2/1.jpg",
       description: "Complete renovation of a 2BHK House"
     },
@@ -25,7 +25,7 @@ const Projects = () => {
     },
     {
       id: 3,
-      title: "2BHK INTERIOR DESIGN",
+      title: "2BHK Interior Design",
       category: "Commercial",
       location: "Krishna Apt Kamothe",
       image: "https://media.designcafe.com/wp-content/uploads/2020/09/25151904/2bhk-apartment-living-room-interior-design.jpg",
@@ -33,11 +33,19 @@ const Projects = () => {
     },
     {
       id: 4,
-      title: "2BHK INTERIOR RENOVATE",
+      title: "2BHK Interior Renovate",
       category: "Residential",
-      location: "Kharghar",
+      location: "Galaxy Apt Kharghar",
       image: "https://media.designcafe.com/wp-content/uploads/2021/06/30163556/modern-2bhk-kitchen-design-with-breakfast-countertop-with-two-tall-chairs.jpg",
       description: "Industrial loft transformed into modern living space"
+    },
+    {
+      id: 5,
+      title: "2BHK Interior Designed",
+      category: "Commercial",
+      location: "Luxury Apt Chunabhatti",
+      image: "https://media.designcafe.com/wp-content/uploads/2021/08/02080107/living-room-3bhk-interior-design-with-brick-wall-cladding.jpg",
+      description: "Exquisite 3BHK Luxury Suite Design Showcasing Local Artistry"
     }
   ];
 

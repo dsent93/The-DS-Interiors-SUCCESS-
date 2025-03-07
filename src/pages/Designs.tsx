@@ -29,6 +29,42 @@ const Designs = () => {
         title: "Blue Tree Canvas",
         description: "Where imagination grows, and creativity takes its roots",
         image: "https://i.ibb.co/Kzh1936q/BLUE-TREE-CANVAS.jpg"
+      },
+      {
+        id: 4,
+        title: "Fantasy Cloudscape",
+        description: " Custom Cloud-inspired designs that elevate your environment",
+        image: "https://i.ibb.co/Tq7zKHJV/Fantasy-Cloud-Scape.jpg"
+      },
+      {
+        id: 5,
+        title: "Elysian Luxe",
+        description: "Exude Sophistication and Opulence",
+        image: "https://i.ibb.co/wrxWY7tg/CANTRAVAL-TEXTURE.jpg"
+      },
+      {
+        id: 6,
+        title: "Stencil Wall",
+        description: "Bold, Delicate motif and Intricate Design",
+        image: "https://i.ibb.co/cK1NzMRm/STENCIL-WALL.jpg"
+      },
+      {
+        id: 7,
+        title: "Alabaster Stripes",
+        description: "Elegant Simplicity in Every Line",
+        image: "https://i.ibb.co/XrMvB64T/TEXTURAL-WHITE-CANVAS.jpg"
+      },
+      {
+        id: 8,
+        title: "Orange Pastel",
+        description: "Soothing Blend of Warmth and Calm to any Space",
+        image: "https://i.ibb.co/XrwtqzjW/ORANGE-PASTEL.jpg"
+      },
+      {
+        id: 9,
+        title: "Damara Motif",
+        description: " A Fusion of Tradition and Elegance",
+        image: "https://i.ibb.co/3yg76jdN/Damasak-Pattern.jpg"
       }
     ];
   });

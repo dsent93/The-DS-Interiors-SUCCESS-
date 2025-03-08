@@ -1,9 +1,21 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { Menu, X } from 'lucide-react';
+import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { Menu, X } from "lucide-react";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const navigate = useNavigate();
+  
+  // Check if user is logged in
+  const isAuthenticated = localStorage.getItem("isLoggedIn");
+
+  const handleLoginClick = () => {
+    if (isAuthenticated) {
+      navigate("/quotation");
+    } else {
+      navigate("/login");
+    }
+  };
 
   return (
     <nav className="bg-white/80 backdrop-blur-md fixed w-full z-50 shadow-sm">
@@ -27,6 +39,12 @@ const Navbar = () => {
             >
               Book Consultation
             </Link>
+            <button 
+              onClick={handleLoginClick} 
+              className="px-4 py-2 bg-blue-500 text-white rounded-full hover:bg-blue-600 transition"
+            >
+              Login
+            </button>
           </div>
 
           {/* Mobile menu button */}
@@ -55,6 +73,12 @@ const Navbar = () => {
             >
               Book Consultation
             </Link>
+            <button 
+              onClick={handleLoginClick} 
+              className="w-full px-3 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600"
+            >
+              Login
+            </button>
           </div>
         </div>
       )}
